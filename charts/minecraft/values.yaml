@@ -208,7 +208,7 @@ minecraftServer:
   externalIPs:
 
   # A list of Spigot resources/plugins IDs to download.
-  spigetResources: []
+  spigetResources: [83374, 42678, 95273]
 
   rcon:
     # If you enable this, make SURE to change your password below.
@@ -294,8 +294,8 @@ persistence:
   # storageClass: "-"
   dataDir:
     # Set this to false if you don't care to persist state between restarts.
-    enabled: false
-    Size: 1Gi
+    enabled: true
+    Size: 10Gi
     # existingClaim: nil
     ## specify a subpath in the volume where the data is. Useful when sharing volumes with other apps.
     # subPath: /path/to/dataDir
