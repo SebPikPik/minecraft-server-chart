@@ -15,7 +15,7 @@ replicaCount: 1
 ##
 resources:
   requests:
-    memory: 512Mi
+    memory: 2Gi
     cpu: 500m
 
 # upgrade strategy type (e.g. Recreate or RollingUpdate)
@@ -87,11 +87,11 @@ extraVolumes: []
 
 minecraftServer:
   # This must be overridden, since we can't accept this for the user.
-  eula: "FALSE"
+  eula: "TRUE"
   # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
   version: "LATEST"
   # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
-  type: "VANILLA"
+  type: "PAPER"
   # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
   forgeVersion:
   # If type is set to SPONGEVANILLA, this sets the version
@@ -103,7 +103,7 @@ minecraftServer:
   # If type is set to SPIGOT, this sets the URL to download the Spigot package
   spigotDownloadUrl:
   # If type is set to PAPER, this sets the URL to download the PaperSpigot package
-  paperDownloadUrl:
+  paperDownloadUrl: https://api.papermc.io/v2/projects/paper/versions/1.19/builds/40/downloads/paper-1.19-40.jar
   # If type is set to FTBA, this sets the modpack to run
   ftbModpackId:
   # If type is set to FTBA and a modpack is set, this sets the version to run
@@ -113,11 +113,11 @@ minecraftServer:
   # Set to true if running Feed The Beast and get an error like "unable to launch forgemodloader"
   ftbLegacyJavaFixer: false
   # One of: peaceful, easy, normal, and hard
-  difficulty: easy
+  difficulty: normal
   # A comma-separated list of player names to whitelist.
   whitelist:
   # A comma-separated list of player names who should be admins.
-  ops:
+  ops: redPikPik
   # A server icon URL for server listings. Auto-scaled and transcoded.
   icon:
   # Max connected players.
@@ -157,7 +157,7 @@ minecraftServer:
   # Message of the Day
   motd: "Welcome to Minecraft on Kubernetes!"
   # If true, enable player-vs-player damage.
-  pvp: false
+  pvp: true
   # One of: DEFAULT, FLAT, LARGEBIOMES, AMPLIFIED, CUSTOMIZED
   levelType: DEFAULT
   # When levelType == FLAT or CUSTOMIZED, this can be used to further customize map generation.
